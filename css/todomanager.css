@@ -1,0 +1,112 @@
+/*
+- 색상표
+D1ECDC      메인보드 배경색
+F2F2F2      메뉴/컨트롤러 배경색
+
+*/
+
+div {
+/*    border: 1px solid gray;*/
+}
+.my-background {
+    height: 100vh;
+    background-color: #D1ECDC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-mainboard {
+    background-color: #FFFFFF;
+/*    width: 1500px;*/
+/*    height: 800px;*/
+    width: 75%;
+    height: 75%;
+    border-radius: 30px;
+    position : relative;
+}
+
+.my-menu {
+    display: inline-block;
+/*    width: 350px;*/
+/*    height: 770px;*/
+/*    margin: 15px;*/
+    width: 23%;
+    height: 96.4%;
+    margin: 1%;
+    border-radius: 20px;
+    vertical-align: middle;
+    
+    background-color: #F2F2F2;
+}
+
+.my-menu-etc {
+    position : absolute;
+    bottom : 4%;
+}
+
+.my-list {
+    display: inline-block;
+/*    width: 650px;*/
+/*    height: 770px;*/
+    width: 44.1%;
+    height: 96.4%;
+    vertical-align: middle;
+}
+
+.my-controller {
+    display: inline-block;
+/*    width: 420px;*/
+/*    height: 770px;*/
+    width: 28%;
+    height: 96.4%;
+    margin: 1%;
+    border-radius: 20px;
+    vertical-align: middle;
+    
+    background-color: #F2F2F2;
+}
+
+.test {
+    width: 80%;
+    height: 75%;
+}
+
+.my-controller-default {
+    font-size: 30px;
+    color: darkgrey;
+    text-align: center;
+    line-height: 25.5
+}
+
+
+
+.my-controller-default-taskinfo {
+    
+}
+
+
+
+.my-controller-add {
+    
+}
+
+.my-controller-add-input {
+    display: block;
+}
+
+.my-list-updown_btn {
+    display: flex;
+    justify-content: flex-end
+}
+
+.my-list-li {
+    position: relative;
+    width: 100%;
+}
+
+.my-list-updownbtn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+}

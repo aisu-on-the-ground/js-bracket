@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!--    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">-->
+    <link rel="stylesheet" href="/css/todomanager.css">
+</head>
+
+<body class="my-background">
+    <div class="my-mainboard">
+        <div class="my-menu">
+            <div class="">
+                Menu + 옵션아이콘
+            </div>
+            <div class="TIME">
+                제목: TIME <br />
+                pm 12:00 + 오른쪽 끝에 알람 아이콘 <br />
+            </div>
+            <div class="TASKS">
+                제목: TASKS <br />
+                Today <br />
+                Calendar <br />
+                Statistics <br />
+            </div>
+            <div class="MY INFO">
+                제목: MY INFO <br />
+                Nickname 오른쪽 끝에 연필 아이콘으로 정보 수정 <br />
+                Grade (마우스오버: 다음 레벨까지 ~포인트 남았습니다) <br />
+                Point (+25 마우스오버: 오늘 획득한 포인트) <br />
+            </div>
+            <div class="my-menu-etc">
+                Settings 다크모드/일반모드, 사용법 <br />
+                Log Out <br />
+            </div>
+        </div>
+        <div class="my-list">
+            <div class="">Today (큰제목)</div>
+            <div class="">2023/00/00 (날짜)</div>
+            <div class="">버튼: Add New Task</div>
+            <div class="">
+                <div class="">
+                    <li class="my-list-li" data-task="1" data-tno="100">
+                        기업 경영학 마케팅 조사 레포트 제출
+                        <div class="my-list-updownbtn" data-task="1">
+                            <button data-task="1" direction="up">↑</button>
+                            <button data-task="1" direction="down">↓</button>
+                        </div>
+                    </li>
+                    <li class="my-list-li" data-task="2" data-tno="200">
+                        드럼 싱글스트로크 연습
+                        <div class="my-list-updownbtn" data-task="2">
+                            <button data-task="2" direction="up">↑</button>
+                            <button data-task="2" direction="down">↓</button>
+                        </div>
+                    </li>
+                    <li class="my-list-li" data-task="3" data-tno="300">
+                        부스트코스 온라인 강의 수강
+                        <div class="my-list-updownbtn" data-task="3">
+                            <button data-task="3" direction="up">↑</button>
+                            <button data-task="3" direction="down">↓</button>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="my-controller">
+            <div class="my-controller-default">
+                Task Info
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $("button").on("click", function() {
+        var TaskNo = $(this).attr("data-task");
+        var TaskToChangeNo;
+        var direction = $(this).attr("direction");
+        console.log(TaskNo);
+        
+        switch(direction) {
+            case "up":
+                (TaskNo !== "1") ? TaskToChangeNo = TaskNo - 1 : TaskToChangeNo = 9999;
+                console.log("TaskNo: " + TaskNo);
+                console.log("TaskToChangeNo: " + TaskToChangeNo);
+                break;
+            case "down":
+                break;
+        }
+        console.log("함수호출직전");
+        changeTask(TaskNo, TaskToChangeNo);
+    })
+    
+    function changeTask(TaskNo, TaskToChangeNo) {
+        console.log($("li[data-task=" + TaskNo + "]").attr("data-tno"));
+        var TaskTno = $("li[data-task=" + TaskNo + "]").attr("data-tno");
+        var TaskToChangeTno = $("li[data-task=" + TaskToChangeNo + "]").attr("data-tno");
+        console.log("TaskTno: " + TaskTno);
+        console.log("TaskToChangeTno: " + TaskToChangeTno);
+        
+//        console.log($("button[data-task=" + TaskNo + "]").attr("direction"));
+        $("li[data-tno=" + TaskTno + "]").insertBefore("li[data-task=" + TaskToChangeNo + "]");
+        $("li[data-tno=" + TaskToChangeTno + "]").attr("data-task", TaskNo);
+        $("li[data-tno=" + TaskTno + "]").attr("data-task", TaskToChangeNo);
+    }
+</script>
+
+</html>

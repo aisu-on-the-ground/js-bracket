@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>test page</title>
+</head>
+
+<body>
+    <div>
+        <p class="text1"></p>
+        <p class="text2"></p>
+        <p class="text3"></p>
+    </div>
+
+    <script>
+        let date1 = new Date();
+        let date2 = new Date("2023-09-01");
+        let regDate = 1693315217000;
+        var date3 = new Date(1693315217000);
+
+        console.log(date1);
+        console.log(date2);
+
+
+        document.getElementsByClassName("text1")[0].innerHTML = date1;
+        document.getElementsByClassName("text2")[0].innerHTML = unixTimeStamp2(unixTimeStampConv(1693315217000));
+        document.getElementsByClassName("text3")[0].innerHTML = 
+        unixTimeStamp(1693315217000);
+        
+        var month = date3.getMonth() + 1;
+
+        console.log("FullYear: " + date3.getFullYear());
+        console.log("Month: " + (date3.getMonth() + 1));
+        console.log("Date: " + date3.getDate());
+        console.log("Hours: " + date3.getHours());
+        console.log("Minutes: " + date3.getMinutes());
+        console.log("Seconds: " + date3.getSeconds());
+        
+        
+        function unixTimeStampConv(time) {
+            return Math.floor(time / 1000);
+        }
+
+        // 타임스탬프 값을 년월일로 변환
+        function unixTimeStamp(time) {
+            // var date = new Date(time * 1000);
+            var date = new Date(time);
+            var year = date.getFullYear();
+            var month = "0" + (date.getMonth() + 1);
+            var day = "0" + date.getDate();
+            var hour = "0" + date.getHours();
+            var minute = "0" + date.getMinutes();
+            var second = "0" + date.getSeconds();
+            return year + "-" + month.substr(-2) + "-" + day.substr(-2);
+        }
+        
+        function unixTimeStamp2(time) {
+            var date = new Date(time * 1000);
+            var year = date.getFullYear();
+            var month = "0" + (date.getMonth() + 1);
+            var day = "0" + date.getDate();
+            var hour = "0" + date.getHours();
+            var minute = "0" + date.getMinutes();
+            var second = "0" + date.getSeconds();
+            return year + "-" + month.substr(-2) + "-" + day.substr(-2) + " " + hour.substr(-2) + ":" + minute.substr(-2) + ":" + second.substr(-2);
+        }
+
+    </script>
+</body>
+
+</html>

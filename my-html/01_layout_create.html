@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/todomanager.css">
+</head>
+
+<body class="my-background">
+    <div class="my-mainboard">
+        <div class="my-menu">
+            <div class="">
+                Menu + 옵션아이콘
+            </div>
+            <div class="TIME">
+                제목: TIME <br />
+                pm 12:00 + 오른쪽 끝에 알람 아이콘 <br />
+            </div>
+            <div class="TASKS">
+                제목: TASKS <br />
+                Today <br />
+                Calendar <br />
+                Statistics <br />
+            </div>
+            <div class="MY INFO">
+                제목: MY INFO <br />
+                Nickname 오른쪽 끝에 연필 아이콘으로 정보 수정 <br />
+                Grade (마우스오버: 다음 레벨까지 ~포인트 남았습니다) <br />
+                Point (+25 마우스오버: 오늘 획득한 포인트) <br />
+            </div>
+            <div class="my-menu-etc">
+                Settings 다크모드/일반모드, 사용법 <br />
+                Log Out <br />
+            </div>
+        </div>
+        <div class="my-list">
+            <div class="">Today (큰제목)</div>
+            <div class="">2023/00/00 (날짜)</div>
+            <div class="">버튼: Add New Task</div>
+            <div class="">
+                <div class="">
+                    <li>기업 경영학 마케팅 조사 레포트 제출</li>
+                    <li>할 일 리스트</li>
+                    <li>할 일 리스트</li>
+                    <li>할 일 리스트</li>
+                </div>
+            </div>
+        </div>
+        <div class="my-controller">
+            <div class="my-controller-add">
+                큰제목: New Task
+                <input class="my-controller-add-input" type="text" name="" placeholder="write the task in one sentence" />
+                <textarea class="my-controller-add-input" placeholder="description"></textarea>
+            </div>
+            <div class="TIME">
+                제목: TIME 지정하기 (이거 클릭하면) <br/>
+                제목: TIME (첨에 접혀진 상태로 클릭하면 펼칠 수 있게)
+                <table>
+                    <tbody class="from">
+                        <th>from</th>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
+                                <label class="btn btn-outline-secondary" for="btnradio1">am</label>
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="btnradio2">pm</label>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" id="exampleSelect1">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </td>
+                        <th>시</th>
+                        <td>
+                            <select class="form-select" id="exampleSelect2">
+                                <option>0</option>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                                <option>40</option>
+                                <option>50</option>
+                            </select>
+                        </td>
+                        <th>분</th>
+                    </tbody>
+                    <tbody class="to">
+                        <th>to</th>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check" name="btnradio2" id="btnradio3" autocomplete="off" checked="">
+                                <label class="btn btn-outline-secondary" for="btnradio3">am</label>
+                                <input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="btnradio4">pm</label>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-select" id="exampleSelect1">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </td>
+                        <th>시</th>
+                        <td>
+                            <select class="form-select" id="exampleSelect2">
+                                <option>0</option>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                                <option>40</option>
+                                <option>50</option>
+                            </select>
+                        </td>
+                        <th>분</th>
+                    </tbody>
+                </table>
+            </div>
+            <div class="TAG">
+                제목: TAG 지정하기 (이거 클릭하면) <br/>
+                제목: TAG (첨에 접혀진 상태로 클릭하면 펼칠 수 있게)
+                <div class="input-group mb-3" style="width: 295px;">
+                    <input type="text" class="form-control" placeholder="write a new tag name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-primary" type="button" id="button-addon2">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

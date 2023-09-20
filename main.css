@@ -1,0 +1,69 @@
+/* CSS파일은 하단에 적을 수록 우선적용 */
+
+.alert-box {
+    background-color: skyblue;
+    padding: 10px;
+    width: 200px;
+    color: white;
+    border-radius: 5px;
+}
+
+.alert-p {
+    width: 150px;
+}
+
+.list-group {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+
+.black-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    padding: 30px;
+    display: none;
+}
+
+.black-bg {
+    
+}
+
+.white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+
+
+
+
+.qwer li {
+    height: 40px;
+    padding: 0px 16px 0px 16px;
+/*    border-top: 1px solid rgba(0, 0, 0, 0.175);*/
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.yoil {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+.my-card-body {
+    padding: 0px 0px 0px 0px;
+}

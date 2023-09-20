@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+
+    <table class="table table-hover" style="width:800px">
+        <thead>
+            <tr>
+                <th scope="col" style="width:44%"></th>
+                <th scope="col" style="width:7%" class="yoil subject1 days-mon">월</th>
+                <th scope="col" style="width:7%" class="yoil subject1 days-tue">화</th>
+                <th scope="col" style="width:7%" class="yoil subject1 days-wed">수</th>
+                <th scope="col" style="width:7%" class="yoil subject1 days-thu">목</th>
+                <th scope="col" style="width:7%" class="yoil subject1 days-fri">금</th>
+                <th scope="col" style="width:7%" class="yoil subject1 days-sat">토</th>
+                <th scope="col" style="width:7%" class="yoil subject1 days-sun">일</th>
+                <th scope="col" style="width:7%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-light">
+                <th scope="row">Light</th>
+                <td class="yoil" data-subject="1" data-ymd="20230911">X</td>
+                <td class="yoil" data-subject="1" data-ymd="20230912">X</td>
+                <td class="yoil" data-subject="1" data-ymd="20230913">O</td>
+                <td class="yoil" data-subject="1" data-ymd="20230914">O</td>
+                <td class="yoil" data-subject="1" data-ymd="20230915">-</td>
+                <td class="yoil" data-subject="1" data-ymd="20230916">-</td>
+                <td class="yoil" data-subject="1" data-ymd="20230917">X</td>
+                <td></td>
+            </tr>
+            
+            <tr class="table-light">
+                <th scope="row">Light</th>
+                <td class="yoil" data-subject="1" data-ymd="20230911">X</td>
+                <td class="yoil" data-subject="1" data-ymd="20230912">X</td>
+                <td class="yoil" data-subject="1" data-ymd="20230913">O</td>
+                <td class="yoil" data-subject="1" data-ymd="20230914">O</td>
+                <td class="yoil" data-subject="1" data-ymd="20230915">-</td>
+                <td class="yoil" data-subject="1" data-ymd="20230916">-</td>
+                <td class="yoil" data-subject="1" data-ymd="20230917">X</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="card border-light mb-3" style="max-width: 20rem;">
+        <div class="card-header bg-primary" style="color: white">MENU</div>
+        <div class="card-body my-card-body qwer">
+            <a href="">
+                <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                    나의 루틴 ✨
+                    <span class="badge bg-primary rounded-pill">14</span>
+                </li>
+            </a>
+            <p></p>
+            <li class="list-group-item list-group-item- d-flex justify-content-between align-items-center">
+                캘린더
+            </li>
+            <p></p>
+            <li class="list-group-item list-group-item- d-flex justify-content-between align-items-center">
+                통계
+            </li>
+        </div>
+    </div>
+
+    <script>
+        $(".yoil").on("click", function() {
+            var checkStatus = $(this).html();
+            console.log("checkStatus: " + checkStatus);
+            console.log("class: " + $(this).attr('class'));
+
+            switch (checkStatus) {
+                case "X":
+                    $(this).html("O");
+                    break;
+                case "O":
+                    $(this).html("-");
+                    break;
+                case "-":
+                    $(this).html("X");
+                    break;
+            }
+
+            var subject = $(this).data("subject");
+            var ymd = $(this).data("ymd");
+
+            console.log("subject: " + subject);
+            console.log("ymd: " + ymd);
+
+        })
+    </script>
+</body>
+
+</html>
